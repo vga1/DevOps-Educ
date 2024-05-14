@@ -63,13 +63,13 @@ resource "null_resource" "example" {
       "sudo systemctl enable docker",
       "sudo usermod -aG docker ec2-user",
       "sudo curl -L https://github.com/docker/compose/releases/download/your_docker_compose_version/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose",
-      "sudo chmod +x /usr/local/bin/docker-compose"
+      "sudo chmod +x /usr/local/bin/docker-compose",
     ]
 
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file("~/.ssh/id_ed25519") # Path to your SSH private key
+      private_key = file("~/.ssh/educ.pem") # Path to your SSH private key
       host        = aws_instance.example.public_ip
     }
   }
