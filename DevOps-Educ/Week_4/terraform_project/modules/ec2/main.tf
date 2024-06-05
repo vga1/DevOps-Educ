@@ -55,7 +55,7 @@ resource "aws_iam_instance_profile" "web_server_instance_profile" {
 
 resource "aws_instance" "example" {
   ami                    = "ami-0bb84b8ffd87024d8"
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   key_name               = "educ"
   associate_public_ip_address = true
   vpc_security_group_ids = [aws_security_group.example.id]

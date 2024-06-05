@@ -10,6 +10,7 @@ module "secrets" {
 # Import the EC2 module
 module "ec2" {
   source = "./modules/ec2"
+  instance_type  = var.instance_type
 }
 
 # Get current account information using aws_caller_identity data source
