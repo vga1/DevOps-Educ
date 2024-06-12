@@ -40,3 +40,6 @@ terraform.rc
 *.tfstate
 *.tfstate.*
 terraform.tfstate.backup
+
+# Ignore vscode
+.vscode/
