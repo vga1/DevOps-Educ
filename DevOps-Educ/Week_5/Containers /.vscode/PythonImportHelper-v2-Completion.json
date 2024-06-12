@@ -1,0 +1,70 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "choice",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "kind": 6,
+        "importPath": "DevOps-tasks-for-practice.Python-api.main",
+        "description": "DevOps-tasks-for-practice.Python-api.main",
+        "peekOfCode": "class Message(BaseModel):\n    message: str\n@app.get(\"/\")\nasync def read_root():\n    return {\"message\": \"Welcome to the Home Page!\"}\n@app.get(\"/hello\")\nasync def read_hello():\n    return {\"message\": \"Hello, World!\"}\n@app.post(\"/json\")\nasync def create_message(message: Message):",
+        "detail": "DevOps-tasks-for-practice.Python-api.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "DevOps-tasks-for-practice.Python-api.main",
+        "description": "DevOps-tasks-for-practice.Python-api.main",
+        "peekOfCode": "app = FastAPI()\nclass Message(BaseModel):\n    message: str\n@app.get(\"/\")\nasync def read_root():\n    return {\"message\": \"Welcome to the Home Page!\"}\n@app.get(\"/hello\")\nasync def read_hello():\n    return {\"message\": \"Hello, World!\"}\n@app.post(\"/json\")",
+        "detail": "DevOps-tasks-for-practice.Python-api.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "DevOps-tasks-for-practice.advanced-app.python-backend.main",
+        "description": "DevOps-tasks-for-practice.advanced-app.python-backend.main",
+        "peekOfCode": "app = FastAPI()\nquotes = [\n    \"Life is what happens when you're busy making other plans. – John Lennon\",\n    \"Get busy living or get busy dying. – Stephen King\",\n    \"You only live once, but if you do it right, once is enough. – Mae West\",\n    \"Many of life’s failures are people who did not realize how close they were to success when they gave up. – Thomas A. Edison\",\n    \"If you want to live a happy life, tie it to a goal, not to people or things. – Albert Einstein\"\n]\n@app.get(\"/quote\")\nasync def read_quote():",
+        "detail": "DevOps-tasks-for-practice.advanced-app.python-backend.main",
+        "documentation": {}
+    },
+    {
+        "label": "quotes",
+        "kind": 5,
+        "importPath": "DevOps-tasks-for-practice.advanced-app.python-backend.main",
+        "description": "DevOps-tasks-for-practice.advanced-app.python-backend.main",
+        "peekOfCode": "quotes = [\n    \"Life is what happens when you're busy making other plans. – John Lennon\",\n    \"Get busy living or get busy dying. – Stephen King\",\n    \"You only live once, but if you do it right, once is enough. – Mae West\",\n    \"Many of life’s failures are people who did not realize how close they were to success when they gave up. – Thomas A. Edison\",\n    \"If you want to live a happy life, tie it to a goal, not to people or things. – Albert Einstein\"\n]\n@app.get(\"/quote\")\nasync def read_quote():\n    return {\"quote\": choice(quotes)}",
+        "detail": "DevOps-tasks-for-practice.advanced-app.python-backend.main",
+        "documentation": {}
+    }
+]

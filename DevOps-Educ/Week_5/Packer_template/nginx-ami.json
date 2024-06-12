@@ -1,0 +1,38 @@
+{
+    "variables": {
+      "aws_region": "us-east-1",
+      "source_ami": "ami-00beae93a2d981137",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "ssh_keypair_name": "educ",
+      "ssh_private_key_file": "~/.ssh/educ.pem"
+    },
+    "builders": [
+        {
+          "type": "amazon-ebs",
+          "region": "{{user `aws_region`}}",
+          "source_ami": "{{user `source_ami`}}",
+          "instance_type": "{{user `instance_type`}}",
+          "ssh_username": "{{user `ssh_username`}}",
+          "ssh_keypair_name": "{{user `ssh_keypair_name`}}",
+          "ssh_private_key_file": "{{user `ssh_private_key_file`}}",
+          "ami_name": "nginx-server-{{timestamp}}"
+        }
+      ],
+      "provisioners": [
+        {
+          "type": "shell",
+          "inline": [
+            "sudo yum update -y",
+            "sudo yum install -y nginx",
+            "sudo service nginx start",
+            "echo '<html><body><h1>' > /tmp/index.html",
+            "hostname -f >> /tmp/index.html",
+            "echo '</h1></body></html>' >> /tmp/index.html",
+            "sudo mv /tmp/index.html /usr/share/nginx/html/index.html",
+            "sudo service nginx start",
+            "sudo systemctl enable nginx"
+          ]
+        }
+      ]
+    }
