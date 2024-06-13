@@ -1,7 +1,0 @@
-stages:
-  - first_stage
-
-first_job:
-  stage: first_stage
-  script:
-    - echo "hello world"
